@@ -12,8 +12,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 2.21,
-          "audio": "audio/lr/p283_001_mic1.wav",
-          "spectrogram": "spectrograms/lr/p283_001_mic1.png"
+          "audio": "audio/lr/p283_001_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p283_001_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -21,8 +21,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 2.19,
-          "audio": "audio/hwb/p283_001_mic1.wav",
-          "spectrogram": "spectrograms/hwb/p283_001_mic1.png"
+          "audio": "audio/hwb/p283_001_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p283_001_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -30,8 +30,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 2.21,
-          "audio": "audio/hwb-plus/p283_001_mic1.wav",
-          "spectrogram": "spectrograms/hwb-plus/p283_001_mic1.png"
+          "audio": "audio/hwb-plus/p283_001_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p283_001_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -39,8 +39,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 2.21,
-          "audio": "audio/hr/p283_001_mic1.wav",
-          "spectrogram": "spectrograms/hr/p283_001_mic1.png"
+          "audio": "audio/hr/p283_001_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p283_001_mic1.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -56,8 +56,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 3.16,
-          "audio": "audio/lr/p283_275_mic2.wav",
-          "spectrogram": "spectrograms/lr/p283_275_mic2.png"
+          "audio": "audio/lr/p283_275_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p283_275_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -65,8 +65,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 3.16,
-          "audio": "audio/hwb/p283_275_mic2.wav",
-          "spectrogram": "spectrograms/hwb/p283_275_mic2.png"
+          "audio": "audio/hwb/p283_275_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p283_275_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -74,8 +74,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 3.16,
-          "audio": "audio/hwb-plus/p283_275_mic2.wav",
-          "spectrogram": "spectrograms/hwb-plus/p283_275_mic2.png"
+          "audio": "audio/hwb-plus/p283_275_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p283_275_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -83,8 +83,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 3.16,
-          "audio": "audio/hr/p283_275_mic2.wav",
-          "spectrogram": "spectrograms/hr/p283_275_mic2.png"
+          "audio": "audio/hr/p283_275_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p283_275_mic2.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -100,8 +100,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 3.48,
-          "audio": "audio/lr/p283_306_mic1.wav",
-          "spectrogram": "spectrograms/lr/p283_306_mic1.png"
+          "audio": "audio/lr/p283_306_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p283_306_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -109,8 +109,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 3.48,
-          "audio": "audio/hwb/p283_306_mic1.wav",
-          "spectrogram": "spectrograms/hwb/p283_306_mic1.png"
+          "audio": "audio/hwb/p283_306_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p283_306_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -118,8 +118,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 3.48,
-          "audio": "audio/hwb-plus/p283_306_mic1.wav",
-          "spectrogram": "spectrograms/hwb-plus/p283_306_mic1.png"
+          "audio": "audio/hwb-plus/p283_306_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p283_306_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -127,8 +127,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 3.48,
-          "audio": "audio/hr/p283_306_mic1.wav",
-          "spectrogram": "spectrograms/hr/p283_306_mic1.png"
+          "audio": "audio/hr/p283_306_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p283_306_mic1.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -144,8 +144,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 2.86,
-          "audio": "audio/lr/p283_359_mic2.wav",
-          "spectrogram": "spectrograms/lr/p283_359_mic2.png"
+          "audio": "audio/lr/p283_359_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p283_359_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -153,8 +153,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 2.86,
-          "audio": "audio/hwb/p283_359_mic2.wav",
-          "spectrogram": "spectrograms/hwb/p283_359_mic2.png"
+          "audio": "audio/hwb/p283_359_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p283_359_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -162,8 +162,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 2.86,
-          "audio": "audio/hwb-plus/p283_359_mic2.wav",
-          "spectrogram": "spectrograms/hwb-plus/p283_359_mic2.png"
+          "audio": "audio/hwb-plus/p283_359_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p283_359_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -171,8 +171,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 2.86,
-          "audio": "audio/hr/p283_359_mic2.wav",
-          "spectrogram": "spectrograms/hr/p283_359_mic2.png"
+          "audio": "audio/hr/p283_359_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p283_359_mic2.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -188,8 +188,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 3.21,
-          "audio": "audio/lr/p360_086_mic1.wav",
-          "spectrogram": "spectrograms/lr/p360_086_mic1.png"
+          "audio": "audio/lr/p360_086_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p360_086_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -197,8 +197,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 3.21,
-          "audio": "audio/hwb/p360_086_mic1.wav",
-          "spectrogram": "spectrograms/hwb/p360_086_mic1.png"
+          "audio": "audio/hwb/p360_086_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p360_086_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -206,8 +206,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 3.21,
-          "audio": "audio/hwb-plus/p360_086_mic1.wav",
-          "spectrogram": "spectrograms/hwb-plus/p360_086_mic1.png"
+          "audio": "audio/hwb-plus/p360_086_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p360_086_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -215,8 +215,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 3.21,
-          "audio": "audio/hr/p360_086_mic1.wav",
-          "spectrogram": "spectrograms/hr/p360_086_mic1.png"
+          "audio": "audio/hr/p360_086_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p360_086_mic1.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -232,8 +232,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 1.79,
-          "audio": "audio/lr/p360_126_mic2.wav",
-          "spectrogram": "spectrograms/lr/p360_126_mic2.png"
+          "audio": "audio/lr/p360_126_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p360_126_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -241,8 +241,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 1.75,
-          "audio": "audio/hwb/p360_126_mic2.wav",
-          "spectrogram": "spectrograms/hwb/p360_126_mic2.png"
+          "audio": "audio/hwb/p360_126_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p360_126_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -250,8 +250,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 1.79,
-          "audio": "audio/hwb-plus/p360_126_mic2.wav",
-          "spectrogram": "spectrograms/hwb-plus/p360_126_mic2.png"
+          "audio": "audio/hwb-plus/p360_126_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p360_126_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -259,8 +259,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 1.79,
-          "audio": "audio/hr/p360_126_mic2.wav",
-          "spectrogram": "spectrograms/hr/p360_126_mic2.png"
+          "audio": "audio/hr/p360_126_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p360_126_mic2.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -276,8 +276,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 2.9,
-          "audio": "audio/lr/p360_235_mic1.wav",
-          "spectrogram": "spectrograms/lr/p360_235_mic1.png"
+          "audio": "audio/lr/p360_235_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p360_235_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -285,8 +285,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 2.9,
-          "audio": "audio/hwb/p360_235_mic1.wav",
-          "spectrogram": "spectrograms/hwb/p360_235_mic1.png"
+          "audio": "audio/hwb/p360_235_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p360_235_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -294,8 +294,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 2.9,
-          "audio": "audio/hwb-plus/p360_235_mic1.wav",
-          "spectrogram": "spectrograms/hwb-plus/p360_235_mic1.png"
+          "audio": "audio/hwb-plus/p360_235_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p360_235_mic1.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -303,8 +303,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 2.9,
-          "audio": "audio/hr/p360_235_mic1.wav",
-          "spectrogram": "spectrograms/hr/p360_235_mic1.png"
+          "audio": "audio/hr/p360_235_mic1.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p360_235_mic1.png?v=hwb-scale-fix-20260920"
         }
       ]
     },
@@ -320,8 +320,8 @@
           "detail": "4 kHz bandwidth",
           "sampleRate": 22050,
           "duration": 2.09,
-          "audio": "audio/lr/p360_301_mic2.wav",
-          "spectrogram": "spectrograms/lr/p360_301_mic2.png"
+          "audio": "audio/lr/p360_301_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/lr/p360_301_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb",
@@ -329,8 +329,8 @@
           "detail": "Baseline",
           "sampleRate": 16000,
           "duration": 2.09,
-          "audio": "audio/hwb/p360_301_mic2.wav",
-          "spectrogram": "spectrograms/hwb/p360_301_mic2.png"
+          "audio": "audio/hwb/p360_301_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb/p360_301_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hwb-plus",
@@ -338,8 +338,8 @@
           "detail": "Proposed",
           "sampleRate": 22050,
           "duration": 2.09,
-          "audio": "audio/hwb-plus/p360_301_mic2.wav",
-          "spectrogram": "spectrograms/hwb-plus/p360_301_mic2.png"
+          "audio": "audio/hwb-plus/p360_301_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hwb-plus/p360_301_mic2.png?v=hwb-scale-fix-20260920"
         },
         {
           "key": "hr",
@@ -347,8 +347,8 @@
           "detail": "Reference",
           "sampleRate": 22050,
           "duration": 2.09,
-          "audio": "audio/hr/p360_301_mic2.wav",
-          "spectrogram": "spectrograms/hr/p360_301_mic2.png"
+          "audio": "audio/hr/p360_301_mic2.wav?v=hwb-scale-fix-20260920",
+          "spectrogram": "spectrograms/hr/p360_301_mic2.png?v=hwb-scale-fix-20260920"
         }
       ]
     }

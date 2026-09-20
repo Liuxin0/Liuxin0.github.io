@@ -66,7 +66,7 @@ filterButtons.forEach((button) => {
   });
 });
 
-fetch('comparisons.json')
+fetch('comparisons.json?v=hwb-scale-fix-20260920')
   .then((response) => {
     if (!response.ok) throw new Error('Unable to load audio comparisons.');
     return response.json();

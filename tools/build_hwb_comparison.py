@@ -15,6 +15,7 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
+ASSET_VERSION = "hwb-scale-fix-20260920"
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -97,6 +98,11 @@ def label_from_identifier(identifier: str) -> tuple[str, str, str]:
     return speaker.upper(), utterance, microphone.upper()
 
 
+def asset_url(path: Path) -> str:
+    relative_path = str(path.relative_to(DEMO_ROOT)).replace("\\", "/")
+    return f"{relative_path}?v={ASSET_VERSION}"
+
+
 def main() -> None:
     source_files = sorted(
         path for path in AUDIO_ROOT.glob("p*_mic*.wav") if "_lr_" not in path.stem
@@ -122,8 +128,8 @@ def main() -> None:
                 "detail": detail,
                 "sampleRate": sample_rate,
                 "duration": round(len(multichannel) / sample_rate, 2),
-                "audio": str(audio_path.relative_to(DEMO_ROOT)).replace("\\", "/"),
-                "spectrogram": str(spec_path.relative_to(DEMO_ROOT)).replace("\\", "/"),
+                "audio": asset_url(audio_path),
+                "spectrogram": asset_url(spec_path),
             })
 
         source_hwb = AUDIO_ROOT / "hwb" / f"{identifier}_pr.wav"
@@ -142,8 +148,8 @@ def main() -> None:
             "detail": "Baseline",
             "sampleRate": hwb_rate,
             "duration": round(len(hwb_audio) / hwb_rate, 2),
-            "audio": str(hwb_target.relative_to(DEMO_ROOT)).replace("\\", "/"),
-            "spectrogram": str(hwb_spec.relative_to(DEMO_ROOT)).replace("\\", "/"),
+            "audio": asset_url(hwb_target),
+            "spectrogram": asset_url(hwb_spec),
         })
 
         speaker, utterance, microphone = label_from_identifier(identifier)
