@@ -1,9 +1,10 @@
-const grid = document.querySelector('#sample-grid');
-const template = document.querySelector('#sample-template');
+const comparisonList = document.querySelector('#comparison-list');
+const comparisonTemplate = document.querySelector('#comparison-template');
+const variantTemplate = document.querySelector('#variant-template');
 const count = document.querySelector('#sample-count');
 const filterButtons = [...document.querySelectorAll('.filter-button')];
 
-let samples = [];
+let comparisons = [];
 let activeFilter = 'all';
 
 function formatDuration(seconds) {
@@ -12,39 +13,44 @@ function formatDuration(seconds) {
   return `${minutes}:${remaining}`;
 }
 
-function renderSamples() {
-  const visibleSamples = activeFilter === 'all'
-    ? samples
-    : samples.filter((sample) => sample.speaker === activeFilter);
+function renderComparisons() {
+  const visibleComparisons = activeFilter === 'all'
+    ? comparisons
+    : comparisons.filter((comparison) => comparison.speaker === activeFilter);
 
-  grid.replaceChildren();
-  count.textContent = `${visibleSamples.length} ${visibleSamples.length === 1 ? 'sample' : 'samples'}`;
+  comparisonList.replaceChildren();
+  count.textContent = `${visibleComparisons.length} ${visibleComparisons.length === 1 ? 'utterance' : 'utterances'}`;
 
-  visibleSamples.forEach((sample) => {
-    const node = template.content.cloneNode(true);
-    const title = `${sample.speaker} · ${sample.utterance} · ${sample.microphone}`;
-    const role = node.querySelector('.sample-role');
-    const image = node.querySelector('.spectrogram');
-    const audio = node.querySelector('.audio-player');
+  visibleComparisons.forEach((comparison) => {
+    const node = comparisonTemplate.content.cloneNode(true);
+    const title = `${comparison.speaker} · ${comparison.utterance} · ${comparison.microphone}`;
+    const columns = node.querySelector('.comparison-columns');
 
-    node.querySelector('.sample-id').textContent = sample.id;
-    node.querySelector('.sample-title').textContent = title;
-    role.textContent = sample.role;
-    role.classList.toggle('full-band', sample.role === 'Full-band sample');
-    image.src = sample.spectrogram;
-    image.alt = `Spectrogram for ${title}`;
-    audio.src = sample.audio;
-    audio.setAttribute('aria-label', `Play ${title}`);
-    node.querySelector('.duration').textContent = formatDuration(sample.duration);
-    node.querySelector('.sample-rate').textContent = `${(sample.sampleRate / 1000).toFixed(1)} kHz`;
-    node.querySelector('.channels').textContent = sample.channels === 1 ? 'Mono' : `${sample.channels} ch`;
+    node.querySelector('.comparison-id').textContent = comparison.id;
+    node.querySelector('.comparison-title').textContent = title;
 
-    audio.addEventListener('play', () => {
-      document.querySelectorAll('audio').forEach((otherAudio) => {
-        if (otherAudio !== audio) otherAudio.pause();
+    comparison.variants.forEach((variant) => {
+      const variantNode = variantTemplate.content.cloneNode(true);
+      const image = variantNode.querySelector('.spectrogram');
+      const audio = variantNode.querySelector('.audio-player');
+
+      variantNode.querySelector('.variant-label').textContent = variant.label;
+      variantNode.querySelector('.variant-detail').textContent = variant.detail;
+      image.src = variant.spectrogram;
+      image.alt = `${variant.label} spectrogram for ${title}`;
+      audio.src = variant.audio;
+      audio.setAttribute('aria-label', `Play ${variant.label} for ${title}`);
+      variantNode.querySelector('.variant-meta').textContent = `${formatDuration(variant.duration)} · ${(variant.sampleRate / 1000).toFixed(2)} kHz`;
+
+      audio.addEventListener('play', () => {
+        document.querySelectorAll('audio').forEach((otherAudio) => {
+          if (otherAudio !== audio) otherAudio.pause();
+        });
       });
+      columns.append(variantNode);
     });
-    grid.append(node);
+
+    comparisonList.append(node);
   });
 }
 
@@ -56,18 +62,18 @@ filterButtons.forEach((button) => {
       item.classList.toggle('active', isActive);
       item.setAttribute('aria-pressed', String(isActive));
     });
-    renderSamples();
+    renderComparisons();
   });
 });
 
-fetch('samples.json')
+fetch('comparisons.json')
   .then((response) => {
-    if (!response.ok) throw new Error('Unable to load audio examples.');
+    if (!response.ok) throw new Error('Unable to load audio comparisons.');
     return response.json();
   })
   .then((payload) => {
-    samples = payload.samples;
-    renderSamples();
+    comparisons = payload.comparisons;
+    renderComparisons();
   })
   .catch((error) => {
     count.textContent = error.message;
