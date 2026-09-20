@@ -1,0 +1,112 @@
+{
+  "samples": [
+    {
+      "id": "p283_001_mic1",
+      "speaker": "P283",
+      "utterance": "001",
+      "microphone": "MIC1",
+      "role": "Full-band sample",
+      "duration": 2.21,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p283_001_mic1.wav",
+      "spectrogram": "spectrograms/p283_001_mic1.png"
+    },
+    {
+      "id": "p283_275_mic2",
+      "speaker": "P283",
+      "utterance": "275",
+      "microphone": "MIC2",
+      "role": "Full-band sample",
+      "duration": 3.16,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p283_275_mic2.wav",
+      "spectrogram": "spectrograms/p283_275_mic2.png"
+    },
+    {
+      "id": "p283_306_mic1",
+      "speaker": "P283",
+      "utterance": "306",
+      "microphone": "MIC1",
+      "role": "Full-band sample",
+      "duration": 3.48,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p283_306_mic1.wav",
+      "spectrogram": "spectrograms/p283_306_mic1.png"
+    },
+    {
+      "id": "p283_359_mic2",
+      "speaker": "P283",
+      "utterance": "359",
+      "microphone": "MIC2",
+      "role": "Full-band sample",
+      "duration": 2.86,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p283_359_mic2.wav",
+      "spectrogram": "spectrograms/p283_359_mic2.png"
+    },
+    {
+      "id": "p360_086_mic1",
+      "speaker": "P360",
+      "utterance": "086",
+      "microphone": "MIC1",
+      "role": "Full-band sample",
+      "duration": 3.21,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p360_086_mic1.wav",
+      "spectrogram": "spectrograms/p360_086_mic1.png"
+    },
+    {
+      "id": "p360_126_mic2",
+      "speaker": "P360",
+      "utterance": "126",
+      "microphone": "MIC2",
+      "role": "Full-band sample",
+      "duration": 1.79,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p360_126_mic2.wav",
+      "spectrogram": "spectrograms/p360_126_mic2.png"
+    },
+    {
+      "id": "p360_235_mic1",
+      "speaker": "P360",
+      "utterance": "235",
+      "microphone": "MIC1",
+      "role": "Full-band sample",
+      "duration": 2.9,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p360_235_mic1.wav",
+      "spectrogram": "spectrograms/p360_235_mic1.png"
+    },
+    {
+      "id": "p360_235_mic1_lr_4k_halfwave_L",
+      "speaker": "P360",
+      "utterance": "235",
+      "microphone": "MIC1",
+      "role": "4 kHz low-resolution input",
+      "duration": 2.9,
+      "sampleRate": 16000,
+      "channels": 1,
+      "audio": "audio/p360_235_mic1_lr_4k_halfwave_L.wav",
+      "spectrogram": "spectrograms/p360_235_mic1_lr_4k_halfwave_L.png"
+    },
+    {
+      "id": "p360_301_mic2",
+      "speaker": "P360",
+      "utterance": "301",
+      "microphone": "MIC2",
+      "role": "Full-band sample",
+      "duration": 2.09,
+      "sampleRate": 22050,
+      "channels": 3,
+      "audio": "audio/p360_301_mic2.wav",
+      "spectrogram": "spectrograms/p360_301_mic2.png"
+    }
+  ]
+}

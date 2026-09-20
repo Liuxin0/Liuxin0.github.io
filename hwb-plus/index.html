@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="HWB-plus audio examples with synchronized spectrogram views." />
+    <title>HWB-plus Audio Demonstrations</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">Interspeech 2026</p>
+          <h1>HWB-plus Audio Demonstrations</h1>
+        </div>
+        <p class="source-note">VCTK evaluation samples</p>
+      </header>
+
+      <section class="overview" aria-label="Audio demonstration overview">
+        <div>
+          <p class="section-kicker">Listening set</p>
+          <h2>Waveforms and spectral detail</h2>
+        </div>
+        <p>Each entry pairs its source audio with a log-magnitude spectrogram. The 4 kHz item is the low-resolution input; the remaining files retain their original filenames and sample identity.</p>
+      </section>
+
+      <nav class="filters" aria-label="Filter examples">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All samples</button>
+        <button class="filter-button" type="button" data-filter="P283" aria-pressed="false">P283</button>
+        <button class="filter-button" type="button" data-filter="P360" aria-pressed="false">P360</button>
+      </nav>
+
+      <p class="sample-count" id="sample-count" aria-live="polite"></p>
+      <section class="sample-grid" id="sample-grid" aria-label="Audio samples"></section>
+    </main>
+
+    <template id="sample-template">
+      <article class="sample-card">
+        <div class="card-head">
+          <div>
+            <p class="sample-id"></p>
+            <h2 class="sample-title"></h2>
+          </div>
+          <span class="sample-role"></span>
+        </div>
+        <figure class="spectrogram-frame">
+          <img class="spectrogram" loading="lazy" />
+          <figcaption>Log-magnitude spectrogram</figcaption>
+        </figure>
+        <audio class="audio-player" controls preload="metadata"></audio>
+        <dl class="sample-meta">
+          <div><dt>Duration</dt><dd class="duration"></dd></div>
+          <div><dt>Sample rate</dt><dd class="sample-rate"></dd></div>
+          <div><dt>Channel</dt><dd class="channels"></dd></div>
+        </dl>
+      </article>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
+
