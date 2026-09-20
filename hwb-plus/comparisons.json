@@ -64,7 +64,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 3.15,
+          "duration": 3.16,
           "audio": "audio/hwb/p283_275_mic2.wav",
           "spectrogram": "spectrograms/hwb/p283_275_mic2.png"
         },
@@ -108,7 +108,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 3.47,
+          "duration": 3.48,
           "audio": "audio/hwb/p283_306_mic1.wav",
           "spectrogram": "spectrograms/hwb/p283_306_mic1.png"
         },
@@ -152,7 +152,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 2.85,
+          "duration": 2.86,
           "audio": "audio/hwb/p283_359_mic2.wav",
           "spectrogram": "spectrograms/hwb/p283_359_mic2.png"
         },
@@ -196,7 +196,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 3.2,
+          "duration": 3.21,
           "audio": "audio/hwb/p360_086_mic1.wav",
           "spectrogram": "spectrograms/hwb/p360_086_mic1.png"
         },
@@ -240,7 +240,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 1.74,
+          "duration": 1.75,
           "audio": "audio/hwb/p360_126_mic2.wav",
           "spectrogram": "spectrograms/hwb/p360_126_mic2.png"
         },
@@ -284,7 +284,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 2.88,
+          "duration": 2.9,
           "audio": "audio/hwb/p360_235_mic1.wav",
           "spectrogram": "spectrograms/hwb/p360_235_mic1.png"
         },
@@ -328,7 +328,7 @@
           "label": "HWB",
           "detail": "Baseline",
           "sampleRate": 16000,
-          "duration": 2.08,
+          "duration": 2.09,
           "audio": "audio/hwb/p360_301_mic2.wav",
           "spectrogram": "spectrograms/hwb/p360_301_mic2.png"
         },
