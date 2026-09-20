@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import shutil
 import struct
 import wave
 from pathlib import Path
@@ -15,7 +14,7 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
-ASSET_VERSION = "hwb-scale-fix-20260920"
+ASSET_VERSION = "hwb-loudness-match-20260921"
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -93,6 +92,28 @@ def save_spectrogram(samples: np.ndarray, sample_rate: int, path: Path) -> None:
     image.resize((1200, 336), Image.Resampling.BICUBIC).save(path, format="PNG", optimize=True)
 
 
+def a_weighted_rms(samples: np.ndarray, sample_rate: int) -> float:
+    spectrum = np.fft.rfft(samples)
+    frequencies = np.fft.rfftfreq(len(samples), d=1.0 / sample_rate)
+    squared = frequencies**2
+    numerator = (12200**2) * (frequencies**4)
+    denominator = (
+        (squared + 20.6**2)
+        * np.sqrt((squared + 107.7**2) * (squared + 737.9**2))
+        * (squared + 12200**2)
+    )
+    amplitude = np.zeros_like(frequencies)
+    valid = denominator > 0
+    amplitude[valid] = numerator[valid] / denominator[valid]
+    gain = 10 ** ((20 * np.log10(np.maximum(amplitude, 1e-30)) + 2.0) / 20)
+    energy = np.abs(spectrum) ** 2 * gain**2
+    if len(samples) % 2 == 0:
+        energy[1:-1] *= 2
+    else:
+        energy[1:] *= 2
+    return float(np.sqrt(energy.sum() / len(samples) ** 2))
+
+
 def label_from_identifier(identifier: str) -> tuple[str, str, str]:
     speaker, utterance, microphone = identifier.split("_")
     return speaker.upper(), utterance, microphone.upper()
@@ -139,9 +160,15 @@ def main() -> None:
         if hwb_audio.shape[1] != 1:
             raise ValueError(f"Expected mono HWB prediction: {source_hwb.name}")
         hwb_target = AUDIO_ROOT / "hwb" / f"{identifier}.wav"
-        shutil.copy2(source_hwb, hwb_target)
+        hwb_signal = hwb_audio[:, 0]
+        hwb_loudness = a_weighted_rms(hwb_signal, hwb_rate)
+        hr_loudness = a_weighted_rms(multichannel[:, 2], sample_rate)
+        if hwb_loudness <= 0 or hr_loudness <= 0:
+            raise ValueError(f"Cannot calibrate silence for {identifier}")
+        hwb_playback = hwb_signal * (hr_loudness / hwb_loudness)
+        write_mono_wav(hwb_playback, hwb_rate, hwb_target)
         hwb_spec = SPECTROGRAM_ROOT / "hwb" / f"{identifier}.png"
-        save_spectrogram(hwb_audio[:, 0], hwb_rate, hwb_spec)
+        save_spectrogram(hwb_playback, hwb_rate, hwb_spec)
         variants.insert(1, {
             "key": "hwb",
             "label": "HWB",
