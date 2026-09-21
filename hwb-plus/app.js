@@ -66,7 +66,7 @@ filterButtons.forEach((button) => {
   });
 });
 
-fetch('comparisons.json?v=hwb-loudness-match-20260921')
+fetch('comparisons.json?v=hwb-fixed-level-spectrogram-20260921')
   .then((response) => {
     if (!response.ok) throw new Error('Unable to load audio comparisons.');
     return response.json();

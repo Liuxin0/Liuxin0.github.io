@@ -14,7 +14,7 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
-ASSET_VERSION = "hwb-loudness-match-20260921"
+ASSET_VERSION = "hwb-fixed-level-spectrogram-20260921"
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -83,9 +83,10 @@ def save_spectrogram(samples: np.ndarray, sample_rate: int, path: Path) -> None:
     if remainder:
         samples = np.pad(samples, (0, hop_length - remainder))
     frames = np.lib.stride_tricks.sliding_window_view(samples, frame_length)[::hop_length]
-    spectrum = np.abs(np.fft.rfft(frames * np.hanning(frame_length), axis=1))
+    window = np.hanning(frame_length)
+    spectrum = np.abs(np.fft.rfft(frames * window, axis=1)) / (window.sum() / 2.0)
     db = 20.0 * np.log10(np.maximum(spectrum, 1e-7))
-    db = np.clip(db - db.max(), -80.0, 0.0)
+    db = np.clip(db, -80.0, 0.0)
     maximum_bin = min(db.shape[1], int(11000 / sample_rate * frame_length) + 1)
     image = Image.fromarray(colorize(((db + 80.0) / 80.0)[:, :maximum_bin].T[::-1, :]), mode="RGB")
     path.parent.mkdir(parents=True, exist_ok=True)
