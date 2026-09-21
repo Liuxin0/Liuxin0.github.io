@@ -66,7 +66,7 @@ filterButtons.forEach((button) => {
   });
 });
 
-fetch('comparisons.json?v=hwb-shared-peak-minus3db-20260921')
+fetch('comparisons.json?v=hwb-audition-spectrum-minus1db-20260921')
   .then((response) => {
     if (!response.ok) throw new Error('Unable to load audio comparisons.');
     return response.json();
