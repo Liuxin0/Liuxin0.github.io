@@ -12,32 +12,26 @@ AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "samples.json"
 SOURCE_ROOT = Path(r"D:\BaiduSyncdisk\documents\my paper\text_annotated-interspeech\展示\音频")
-ASSET_VERSION = "switchse-demo-v1-20260921"
+ASSET_VERSION = "switchse-demo-v2-20260921"
 TARGET_PEAK = 10 ** (-1.0 / 20.0)
 SPECTROGRAM_GAIN_DB = 20.0
 SPECTROGRAM_RANGE_DB = 80.0
 
 
-GROUPS = {
-    "CHiME-Enh": {
-        "group": "chime-enh",
-        "collection": "CHiME-3 target domain · SEnh",
-        "variant_labels": (("Noisy input", "Real noisy recording"), ("SwitchSE", "SEnh: quality-oriented mode")),
+DATASETS = {
+    "CHiME": {
+        "group": "chime",
+        "collection": "CHiME-3 target-domain test set",
+        "enhancement_dir": "CHiME-Enh",
+        "asr_dir": "CHiME-ASR",
+        "variants": (("Noisy input", "Real noisy recording", "enhancement", 0, "noisy"), ("S_Enh", "Speech-quality-oriented mode", "enhancement", 1, "s-enh"), ("S_ASR", "ASR-oriented mode", "asr", 1, "s-asr")),
     },
-    "CHiME-ASR": {
-        "group": "chime-asr",
-        "collection": "CHiME-3 target domain · SASR",
-        "variant_labels": (("Noisy input", "Real noisy recording"), ("SwitchSE", "SASR: ASR-oriented mode")),
-    },
-    "VCTK-Enh": {
-        "group": "vctk-enh",
-        "collection": "VCTK source domain · SEnh",
-        "variant_labels": (("Noisy input", "Synthetic noisy mixture"), ("GCRN", "Pre-trained baseline"), ("SwitchSE", "SEnh: quality-oriented mode")),
-    },
-    "VCTK-ASR": {
-        "group": "vctk-asr",
-        "collection": "VCTK source domain · SASR",
-        "variant_labels": (("Noisy input", "Synthetic noisy mixture"), ("GCRN", "Pre-trained baseline"), ("SwitchSE", "SASR: ASR-oriented mode")),
+    "VCTK": {
+        "group": "vctk",
+        "collection": "VCTK source-domain test set",
+        "enhancement_dir": "VCTK-Enh",
+        "asr_dir": "VCTK-ASR",
+        "variants": (("Noisy input", "Synthetic noisy mixture", "enhancement", 0, "noisy"), ("GCRN", "Pre-trained baseline", "enhancement", 1, "gcrn"), ("S_Enh", "Speech-quality-oriented mode", "enhancement", 2, "s-enh"), ("S_ASR", "ASR-oriented mode", "asr", 2, "s-asr")),
     },
 }
 
@@ -102,10 +96,34 @@ def save_spectrogram(samples: np.ndarray, sample_rate: int, path: Path) -> None:
     image.resize((1200, 336), Image.Resampling.BICUBIC).save(path, format="PNG", optimize=True)
 
 
-def title_for(group_name: str, stem: str) -> str:
-    parts = stem.split("_")
-    if group_name.startswith("CHiME"):
-        return f"{parts[0]} · {parts[-3]} · real noisy speech"
+def comparison_key(stem: str) -> str:
+    base, separator, mode = stem.rpartition("_")
+    if not separator or mode not in {"0.0", "1.0"}:
+        raise ValueError(f"Expected a mode-tagged source file name: {stem}")
+    return base
+
+
+def source_index(directory: Path) -> dict[str, Path]:
+    indexed = {}
+    for path in sorted(directory.glob("*.wav")):
+        key = comparison_key(path.stem)
+        if key in indexed:
+            raise ValueError(f"Duplicate utterance key {key} in {directory}")
+        indexed[key] = path
+    return indexed
+
+
+def validate_shared_channels(dataset_name: str, utterance_key: str, enhancement: np.ndarray, asr: np.ndarray) -> None:
+    if enhancement.shape[0] != asr.shape[0]:
+        raise ValueError(f"Mismatched duration for {dataset_name} {utterance_key}")
+    if not np.array_equal(enhancement[:, 0], asr[:, 0]):
+        raise ValueError(f"Noisy input differs between modes for {dataset_name} {utterance_key}")
+
+
+def title_for(dataset_name: str, key: str) -> str:
+    parts = key.split("_")
+    if dataset_name == "CHiME":
+        return f"{parts[0]} · {parts[-2]} · real noisy speech"
     return f"{parts[0].upper()} / {parts[1]} · {parts[2]} dB mixture"
 
 
@@ -116,37 +134,36 @@ def asset_url(path: Path) -> str:
 
 def main() -> None:
     samples = []
-    for group_name, config in GROUPS.items():
-        source_dir = SOURCE_ROOT / group_name
-        for source_path in sorted(source_dir.glob("*.wav")):
-            multichannel, sample_rate = read_wav(source_path)
-            labels = config["variant_labels"]
-            if multichannel.shape[1] != len(labels):
-                raise ValueError(f"Unexpected channel count in {source_path}: {multichannel.shape[1]}")
+    for dataset_name, config in DATASETS.items():
+        enhancement_paths = source_index(SOURCE_ROOT / config["enhancement_dir"])
+        asr_paths = source_index(SOURCE_ROOT / config["asr_dir"])
+        if enhancement_paths.keys() != asr_paths.keys():
+            missing_asr = sorted(enhancement_paths.keys() - asr_paths.keys())
+            missing_enhancement = sorted(asr_paths.keys() - enhancement_paths.keys())
+            raise ValueError(f"Unpaired {dataset_name} files; missing ASR={missing_asr}, missing enhancement={missing_enhancement}")
 
-            peak = float(np.max(np.abs(multichannel)))
+        for key in sorted(enhancement_paths):
+            enhancement, enhancement_rate = read_wav(enhancement_paths[key])
+            asr, asr_rate = read_wav(asr_paths[key])
+            expected_channels = 2 if dataset_name == "CHiME" else 3
+            if enhancement_rate != asr_rate or enhancement.shape[1] != expected_channels or asr.shape[1] != expected_channels:
+                raise ValueError(f"Unexpected audio format for {dataset_name} {key}")
+            validate_shared_channels(dataset_name, key, enhancement, asr)
+
+            sources = {"enhancement": enhancement, "asr": asr}
+            selected = [(label, detail, sources[mode][:, channel], suffix) for label, detail, mode, channel, suffix in config["variants"]]
+            peak = float(np.max(np.abs(np.stack([channel for _, _, channel, _ in selected], axis=1))))
             gain = TARGET_PEAK / peak if peak > 0 else 1.0
-            normalized = multichannel * gain
-            identifier = f"{config['group']}-{source_path.stem}"
             variants = []
-            for index, (label, detail) in enumerate(labels):
-                audio_path = AUDIO_ROOT / config["group"] / f"{source_path.stem}-ch{index + 1}.wav"
-                image_path = SPECTROGRAM_ROOT / config["group"] / f"{source_path.stem}-ch{index + 1}.png"
-                write_mono_wav(normalized[:, index], sample_rate, audio_path)
-                save_spectrogram(normalized[:, index], sample_rate, image_path)
+            for label, detail, channel, suffix in selected:
+                normalized = channel * gain
+                audio_path = AUDIO_ROOT / config["group"] / f"{key}-{suffix}.wav"
+                image_path = SPECTROGRAM_ROOT / config["group"] / f"{key}-{suffix}.png"
+                write_mono_wav(normalized, enhancement_rate, audio_path)
+                save_spectrogram(normalized, enhancement_rate, image_path)
                 variants.append({"label": label, "detail": detail, "audio": asset_url(audio_path), "spectrogram": asset_url(image_path)})
 
-            samples.append(
-                {
-                    "id": identifier,
-                    "group": config["group"],
-                    "collection": config["collection"],
-                    "title": title_for(group_name, source_path.stem),
-                    "sampleRate": sample_rate,
-                    "duration": round(len(multichannel) / sample_rate, 3),
-                    "variants": variants,
-                }
-            )
+            samples.append({"id": f"{config['group']}-{key}", "group": config["group"], "collection": config["collection"], "title": title_for(dataset_name, key), "sampleRate": enhancement_rate, "duration": round(len(enhancement) / enhancement_rate, 3), "variants": variants})
 
     MANIFEST_PATH.write_text(json.dumps({"samples": samples}, indent=2) + "\n", encoding="utf-8")
     print(f"Generated {len(samples)} SwitchSE audio comparisons.")

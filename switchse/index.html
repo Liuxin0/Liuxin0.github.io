@@ -14,7 +14,12 @@
           <p class="eyebrow">Interspeech 2026</p>
           <h1>SwitchSE Audio Demonstrations</h1>
         </div>
-        <p class="source-note">VCTK and CHiME-3 evaluation samples</p>
+        <div class="masthead-meta">
+          <p class="source-note">VCTK and CHiME-3 evaluation samples</p>
+          <a class="qr-link" href="https://liuxin0.github.io/switchse/" aria-label="Open the SwitchSE audio demonstration">
+            <img src="../assets/qrcodes/switchse-audio-demo.png" alt="QR code for the SwitchSE audio demonstration">
+          </a>
+        </div>
       </header>
 
       <section class="overview" aria-label="Audio demonstration overview">
@@ -22,7 +27,7 @@
           <p class="section-kicker">Listening comparison</p>
           <h2>One model, two target-domain operating modes</h2>
         </div>
-        <p>Each row fixes one utterance and compares the noisy input with the pre-trained GCRN baseline and/or SwitchSE. The SEnh mode prioritizes enhanced speech quality; the SASR mode applies transcript-guided adaptation for recognition-friendly output.</p>
+        <p>Each row fixes one utterance and compares the noisy input, the pre-trained GCRN baseline where applicable, and SwitchSE in both operating modes. S_Enh prioritizes enhanced speech quality; S_ASR is optimized for recognition-friendly output.</p>
       </section>
 
       <aside class="method-note" aria-label="Comparison note">
@@ -32,10 +37,8 @@
 
       <nav class="filters" aria-label="Filter examples">
         <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All samples</button>
-        <button class="filter-button" type="button" data-filter="chime-enh" aria-pressed="false">CHiME SEnh</button>
-        <button class="filter-button" type="button" data-filter="chime-asr" aria-pressed="false">CHiME SASR</button>
-        <button class="filter-button" type="button" data-filter="vctk-enh" aria-pressed="false">VCTK SEnh</button>
-        <button class="filter-button" type="button" data-filter="vctk-asr" aria-pressed="false">VCTK SASR</button>
+        <button class="filter-button" type="button" data-filter="chime" aria-pressed="false">CHiME-3</button>
+        <button class="filter-button" type="button" data-filter="vctk" aria-pressed="false">VCTK</button>
       </nav>
 
       <p class="sample-count" id="sample-count" aria-live="polite"></p>

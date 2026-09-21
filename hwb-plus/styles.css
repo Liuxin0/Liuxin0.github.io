@@ -64,6 +64,19 @@ h1 {
   white-space: nowrap;
 }
 
+.masthead-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.qr-link img {
+  display: block;
+  width: 84px;
+  height: 84px;
+  image-rendering: pixelated;
+}
+
 .overview {
   display: grid;
   grid-template-columns: minmax(280px, 0.8fr) minmax(420px, 1.2fr);
@@ -194,7 +207,8 @@ figcaption { padding-top: 6px; color: var(--muted); font-size: 0.74rem; }
 @media (max-width: 680px) {
   .shell { width: min(100% - 28px, 1600px); padding-top: 28px; }
   .masthead, .overview { display: block; }
-  .source-note { margin-top: 18px; }
+  .masthead-meta { margin-top: 18px; }
+  .source-note { margin-top: 0; }
   .overview { padding-top: 26px; }
   .overview > p { margin-top: 16px; }
   .method-note { grid-template-columns: 1fr; gap: 5px; }

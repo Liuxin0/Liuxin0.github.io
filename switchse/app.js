@@ -61,7 +61,7 @@ filterButtons.forEach((button) => {
   });
 });
 
-fetch('samples.json?v=switchse-demo-v1-20260921')
+fetch('samples.json?v=switchse-demo-v2-20260921')
   .then((response) => {
     if (!response.ok) throw new Error(`Could not load samples (${response.status})`);
     return response.json();
