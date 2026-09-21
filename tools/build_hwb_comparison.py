@@ -14,7 +14,7 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
-ASSET_VERSION = "hwb-audition-spectrum-minus1db-20260921"
+ASSET_VERSION = "hwb-adobe-default-spectrum-minus1db-20260921"
 EXCLUDED_IDENTIFIERS = {"p360_126_mic2"}
 TARGET_PEAK = 10 ** (-1.0 / 20.0)
 
@@ -71,7 +71,16 @@ def write_mono_wav(samples: np.ndarray, sample_rate: int, path: Path) -> None:
 
 def colorize(values: np.ndarray) -> np.ndarray:
     stops = np.array(
-        [[0.00, 0, 0, 0], [0.18, 0, 18, 96], [0.36, 0, 75, 255], [0.54, 118, 0, 220], [0.69, 238, 0, 106], [0.82, 255, 92, 0], [0.93, 255, 225, 0], [1.00, 255, 255, 255]],
+        [
+            [0.00, 3, 9, 35],
+            [0.18, 12, 28, 83],
+            [0.34, 36, 66, 170],
+            [0.50, 105, 69, 177],
+            [0.62, 183, 125, 198],
+            [0.72, 235, 205, 88],
+            [0.82, 255, 235, 78],
+            [1.00, 255, 244, 126],
+        ],
         dtype=np.float32,
     )
     return np.stack([np.interp(values, stops[:, 0], stops[:, index]) for index in range(1, 4)], axis=-1).astype(np.uint8)
