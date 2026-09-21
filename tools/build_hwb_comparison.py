@@ -14,7 +14,9 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
-ASSET_VERSION = "hwb-validated-stft-20260921"
+ASSET_VERSION = "hwb-shared-peak-minus3db-20260921"
+EXCLUDED_IDENTIFIERS = {"p360_126_mic2"}
+TARGET_PEAK = 10 ** (-3.0 / 20.0)
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -103,9 +105,20 @@ def asset_url(path: Path) -> str:
     return f"{relative_path}?v={ASSET_VERSION}"
 
 
+def remove_excluded_assets() -> None:
+    for identifier in EXCLUDED_IDENTIFIERS:
+        (AUDIO_ROOT / f"{identifier}.wav").unlink(missing_ok=True)
+        for directory in ("lr", "hwb", "hwb-plus", "hr"):
+            (AUDIO_ROOT / directory / f"{identifier}.wav").unlink(missing_ok=True)
+            (SPECTROGRAM_ROOT / directory / f"{identifier}.png").unlink(missing_ok=True)
+        (AUDIO_ROOT / "hwb" / f"{identifier}_pr.wav").unlink(missing_ok=True)
+
+
 def main() -> None:
+    remove_excluded_assets()
     source_files = sorted(
-        path for path in AUDIO_ROOT.glob("p*_mic*.wav") if "_lr_" not in path.stem
+        path for path in AUDIO_ROOT.glob("p*_mic*.wav")
+        if "_lr_" not in path.stem and path.stem not in EXCLUDED_IDENTIFIERS
     )
     comparisons = []
     channel_variants = (("lr", "LR input", "4 kHz bandwidth", 0), ("hwb-plus", "HWB-Plus", "Proposed", 1), ("hr", "HR reference", "Reference", 2))
@@ -116,12 +129,25 @@ def main() -> None:
         if multichannel.shape[1] != 3:
             raise ValueError(f"Expected LR/predict/HR channels in {source.name}, got {multichannel.shape[1]}")
 
+        source_hwb = AUDIO_ROOT / "hwb" / f"{identifier}_pr.wav"
+        if not source_hwb.exists():
+            raise FileNotFoundError(f"Missing HWB prediction: {source_hwb}")
+        hwb_audio, hwb_rate = read_wav(source_hwb)
+        if hwb_audio.shape[1] != 1:
+            raise ValueError(f"Expected mono HWB prediction: {source_hwb.name}")
+        hwb_signal = hwb_audio[:, 0]
+        source_peak = max(float(np.max(np.abs(multichannel))), float(np.max(np.abs(hwb_signal))))
+        if source_peak <= 0:
+            raise ValueError(f"Cannot normalize silence for {identifier}")
+        gain = TARGET_PEAK / source_peak
+
         variants = []
         for directory, label, detail, channel in channel_variants:
             audio_path = AUDIO_ROOT / directory / f"{identifier}.wav"
             spec_path = SPECTROGRAM_ROOT / directory / f"{identifier}.png"
-            write_mono_wav(multichannel[:, channel], sample_rate, audio_path)
-            save_spectrogram(multichannel[:, channel], sample_rate, spec_path)
+            signal = multichannel[:, channel] * gain
+            write_mono_wav(signal, sample_rate, audio_path)
+            save_spectrogram(signal, sample_rate, spec_path)
             variants.append({
                 "key": directory,
                 "label": label,
@@ -132,14 +158,8 @@ def main() -> None:
                 "spectrogram": asset_url(spec_path),
             })
 
-        source_hwb = AUDIO_ROOT / "hwb" / f"{identifier}_pr.wav"
-        if not source_hwb.exists():
-            raise FileNotFoundError(f"Missing HWB prediction: {source_hwb}")
-        hwb_audio, hwb_rate = read_wav(source_hwb)
-        if hwb_audio.shape[1] != 1:
-            raise ValueError(f"Expected mono HWB prediction: {source_hwb.name}")
         hwb_target = AUDIO_ROOT / "hwb" / f"{identifier}.wav"
-        hwb_signal = hwb_audio[:, 0]
+        hwb_signal = hwb_signal * gain
         write_mono_wav(hwb_signal, hwb_rate, hwb_target)
         hwb_spec = SPECTROGRAM_ROOT / "hwb" / f"{identifier}.png"
         save_spectrogram(hwb_signal, hwb_rate, hwb_spec)
