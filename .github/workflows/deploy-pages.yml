@@ -31,6 +31,7 @@ jobs:
           cp index.html _site/
           cp -R assets _site/assets
           cp -R hwb-plus _site/hwb-plus
+          cp -R switchse _site/switchse
       - name: Upload site artifact
         uses: actions/upload-pages-artifact@v3
         with:
