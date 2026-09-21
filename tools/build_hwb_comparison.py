@@ -14,9 +14,11 @@ DEMO_ROOT = SITE_ROOT / "hwb-plus"
 AUDIO_ROOT = DEMO_ROOT / "audio"
 SPECTROGRAM_ROOT = DEMO_ROOT / "spectrograms"
 MANIFEST_PATH = DEMO_ROOT / "comparisons.json"
-ASSET_VERSION = "hwb-audition-red-spectrum-minus1db-20260921"
+ASSET_VERSION = "hwb-audiolens-rose-spectrum-minus1db-20260921"
 EXCLUDED_IDENTIFIERS = {"p360_126_mic2"}
 TARGET_PEAK = 10 ** (-1.0 / 20.0)
+SPECTROGRAM_GAIN_DB = 20.0
+SPECTROGRAM_RANGE_DB = 80.0
 
 
 def read_wav(path: Path) -> tuple[np.ndarray, int]:
@@ -72,14 +74,15 @@ def write_mono_wav(samples: np.ndarray, sample_rate: int, path: Path) -> None:
 def colorize(values: np.ndarray) -> np.ndarray:
     stops = np.array(
         [
-            [0.00, 2, 3, 10],
-            [0.18, 10, 7, 40],
-            [0.34, 61, 18, 80],
-            [0.50, 153, 30, 91],
-            [0.62, 222, 38, 57],
-            [0.74, 251, 96, 40],
-            [0.86, 255, 193, 62],
-            [1.00, 255, 240, 148],
+            [0.000, 0, 0, 0],
+            [0.125, 0, 30, 60],
+            [0.250, 56, 36, 136],
+            [0.375, 132, 24, 160],
+            [0.500, 196, 40, 132],
+            [0.625, 236, 88, 88],
+            [0.750, 252, 148, 72],
+            [0.875, 240, 212, 148],
+            [1.000, 255, 252, 250],
         ],
         dtype=np.float32,
     )
@@ -97,9 +100,9 @@ def save_spectrogram(samples: np.ndarray, sample_rate: int, path: Path) -> None:
     window = np.hanning(frame_length)
     spectrum = np.abs(np.fft.rfft(frames * window, axis=1)) / (window.sum() / 2.0)
     db = 20.0 * np.log10(np.maximum(spectrum, 1e-7))
-    db = np.clip(db, -80.0, 0.0)
+    display_values = np.clip((db + SPECTROGRAM_GAIN_DB + SPECTROGRAM_RANGE_DB) / SPECTROGRAM_RANGE_DB, 0.0, 1.0)
     maximum_bin = min(db.shape[1], int(11000 / sample_rate * frame_length) + 1)
-    image = Image.fromarray(colorize(((db + 80.0) / 80.0)[:, :maximum_bin].T[::-1, :]), mode="RGB")
+    image = Image.fromarray(colorize(display_values[:, :maximum_bin].T[::-1, :]), mode="RGB")
     path.parent.mkdir(parents=True, exist_ok=True)
     image.resize((1200, 336), Image.Resampling.BICUBIC).save(path, format="PNG", optimize=True)
 
