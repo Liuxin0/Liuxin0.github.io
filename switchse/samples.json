@@ -1,0 +1,482 @@
+{
+  "samples": [
+    {
+      "id": "chime-enh-F05_440C020M_CAF_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "F05 \u00b7 CAF \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 3.296,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/F05_440C020M_CAF_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F05_440C020M_CAF_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/F05_440C020M_CAF_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F05_440C020M_CAF_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-F05_442C020H_BUS_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "F05 \u00b7 BUS \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 4.368,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/F05_442C020H_BUS_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F05_442C020H_BUS_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/F05_442C020H_BUS_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F05_442C020H_BUS_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-F06_441C020K_STR_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "F06 \u00b7 STR \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 9.288,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/F06_441C020K_STR_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F06_441C020K_STR_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/F06_441C020K_STR_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F06_441C020K_STR_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-F06_445C0216_PED_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "F06 \u00b7 PED \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 4.92,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/F06_445C0216_PED_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F06_445C0216_PED_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/F06_445C0216_PED_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/F06_445C0216_PED_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-M05_441C0202_BUS_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "M05 \u00b7 BUS \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 5.128,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/M05_441C0202_BUS_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M05_441C0202_BUS_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/M05_441C0202_BUS_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M05_441C0202_BUS_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-M05_445C020L_STR_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "M05 \u00b7 STR \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 8.356,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/M05_445C020L_STR_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M05_445C020L_STR_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/M05_445C020L_STR_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M05_445C020L_STR_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-M06_444C020B_CAF_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "M06 \u00b7 CAF \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 9.732,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/M06_444C020B_CAF_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M06_444C020B_CAF_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/M06_444C020B_CAF_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M06_444C020B_CAF_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-enh-M06_447C0217_PED_REAL_0.0",
+      "group": "chime-enh",
+      "collection": "CHiME-3 target domain \u00b7 SEnh",
+      "title": "M06 \u00b7 PED \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 7.16,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-enh/M06_447C0217_PED_REAL_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M06_447C0217_PED_REAL_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/chime-enh/M06_447C0217_PED_REAL_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-enh/M06_447C0217_PED_REAL_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "chime-asr-F05_440C020M_CAF_REAL_1.0",
+      "group": "chime-asr",
+      "collection": "CHiME-3 target domain \u00b7 SASR",
+      "title": "F05 \u00b7 CAF \u00b7 real noisy speech",
+      "sampleRate": 16000,
+      "duration": 3.296,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Real noisy recording",
+          "audio": "audio/chime-asr/F05_440C020M_CAF_REAL_1.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-asr/F05_440C020M_CAF_REAL_1.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SASR: ASR-oriented mode",
+          "audio": "audio/chime-asr/F05_440C020M_CAF_REAL_1.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/chime-asr/F05_440C020M_CAF_REAL_1.0-ch2.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p230_283_0_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P230 / 283 \u00b7 0 dB mixture",
+      "sampleRate": 16000,
+      "duration": 3.587,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p230_283_0_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p230_283_0_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p230_283_0_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p230_283_0_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p230_283_0_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p230_283_0_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p241_222_3_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P241 / 222 \u00b7 3 dB mixture",
+      "sampleRate": 16000,
+      "duration": 4.054,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p241_222_3_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_222_3_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p241_222_3_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_222_3_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p241_222_3_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_222_3_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p241_350_6_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P241 / 350 \u00b7 6 dB mixture",
+      "sampleRate": 16000,
+      "duration": 2.821,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p241_350_6_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_350_6_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p241_350_6_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_350_6_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p241_350_6_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p241_350_6_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p264_004_-3_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P264 / 004 \u00b7 -3 dB mixture",
+      "sampleRate": 16000,
+      "duration": 5.292,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p264_004_-3_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p264_004_-3_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p264_004_-3_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p264_004_-3_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p264_004_-3_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p264_004_-3_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p272_141_-6_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P272 / 141 \u00b7 -6 dB mixture",
+      "sampleRate": 16000,
+      "duration": 2.522,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p272_141_-6_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p272_141_-6_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p272_141_-6_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p272_141_-6_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p272_141_-6_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p272_141_-6_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p277_176_-6_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P277 / 176 \u00b7 -6 dB mixture",
+      "sampleRate": 16000,
+      "duration": 2.392,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p277_176_-6_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p277_176_-6_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p277_176_-6_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p277_176_-6_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p277_176_-6_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p277_176_-6_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p302_087_0_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P302 / 087 \u00b7 0 dB mixture",
+      "sampleRate": 16000,
+      "duration": 4.226,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p302_087_0_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p302_087_0_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p302_087_0_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p302_087_0_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p302_087_0_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p302_087_0_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p326_366_-3_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P326 / 366 \u00b7 -3 dB mixture",
+      "sampleRate": 16000,
+      "duration": 3.332,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p326_366_-3_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p326_366_-3_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p326_366_-3_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p326_366_-3_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p326_366_-3_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p326_366_-3_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-enh-p333_287_9_0.0",
+      "group": "vctk-enh",
+      "collection": "VCTK source domain \u00b7 SEnh",
+      "title": "P333 / 287 \u00b7 9 dB mixture",
+      "sampleRate": 16000,
+      "duration": 2.65,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-enh/p333_287_9_0.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p333_287_9_0.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-enh/p333_287_9_0.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p333_287_9_0.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SEnh: quality-oriented mode",
+          "audio": "audio/vctk-enh/p333_287_9_0.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-enh/p333_287_9_0.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    },
+    {
+      "id": "vctk-asr-p230_283_0_1.0",
+      "group": "vctk-asr",
+      "collection": "VCTK source domain \u00b7 SASR",
+      "title": "P230 / 283 \u00b7 0 dB mixture",
+      "sampleRate": 16000,
+      "duration": 3.587,
+      "variants": [
+        {
+          "label": "Noisy input",
+          "detail": "Synthetic noisy mixture",
+          "audio": "audio/vctk-asr/p230_283_0_1.0-ch1.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-asr/p230_283_0_1.0-ch1.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "GCRN",
+          "detail": "Pre-trained baseline",
+          "audio": "audio/vctk-asr/p230_283_0_1.0-ch2.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-asr/p230_283_0_1.0-ch2.png?v=switchse-demo-v1-20260921"
+        },
+        {
+          "label": "SwitchSE",
+          "detail": "SASR: ASR-oriented mode",
+          "audio": "audio/vctk-asr/p230_283_0_1.0-ch3.wav?v=switchse-demo-v1-20260921",
+          "spectrogram": "spectrograms/vctk-asr/p230_283_0_1.0-ch3.png?v=switchse-demo-v1-20260921"
+        }
+      ]
+    }
+  ]
+}

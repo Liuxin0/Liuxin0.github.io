@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="SwitchSE audio comparisons on VCTK and CHiME-3 speech enhancement samples.">
+    <title>SwitchSE Audio Demonstrations</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <header class="masthead">
+        <div>
+          <p class="eyebrow">Interspeech 2026</p>
+          <h1>SwitchSE Audio Demonstrations</h1>
+        </div>
+        <p class="source-note">VCTK and CHiME-3 evaluation samples</p>
+      </header>
+
+      <section class="overview" aria-label="Audio demonstration overview">
+        <div>
+          <p class="section-kicker">Listening comparison</p>
+          <h2>One model, two target-domain operating modes</h2>
+        </div>
+        <p>Each row fixes one utterance and compares the noisy input with the pre-trained GCRN baseline and/or SwitchSE. The SEnh mode prioritizes enhanced speech quality; the SASR mode applies transcript-guided adaptation for recognition-friendly output.</p>
+      </section>
+
+      <aside class="method-note" aria-label="Comparison note">
+        <strong>Playback note</strong>
+        <span>Within each utterance, all conditions share one peak gain with a maximum of -1 dBFS. This is playback normalization only: relative amplitude differences between conditions in the same row are preserved. Spectrograms use the AudioLens Rose palette and its default display brightness.</span>
+      </aside>
+
+      <nav class="filters" aria-label="Filter examples">
+        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All samples</button>
+        <button class="filter-button" type="button" data-filter="chime-enh" aria-pressed="false">CHiME SEnh</button>
+        <button class="filter-button" type="button" data-filter="chime-asr" aria-pressed="false">CHiME SASR</button>
+        <button class="filter-button" type="button" data-filter="vctk-enh" aria-pressed="false">VCTK SEnh</button>
+        <button class="filter-button" type="button" data-filter="vctk-asr" aria-pressed="false">VCTK SASR</button>
+      </nav>
+
+      <p class="sample-count" id="sample-count" aria-live="polite"></p>
+      <section class="comparison-list" id="comparison-list" aria-label="SwitchSE audio comparisons"></section>
+    </main>
+
+    <template id="comparison-template">
+      <article class="comparison">
+        <header class="comparison-head">
+          <p class="comparison-id"></p>
+          <h2 class="comparison-title"></h2>
+        </header>
+        <div class="comparison-columns"></div>
+      </article>
+    </template>
+
+    <template id="variant-template">
+      <section class="variant">
+        <header class="variant-head">
+          <h3 class="variant-label"></h3>
+          <p class="variant-detail"></p>
+        </header>
+        <figure>
+          <img class="spectrogram" loading="lazy">
+          <figcaption>Log-magnitude spectrogram</figcaption>
+        </figure>
+        <audio class="audio-player" controls preload="metadata"></audio>
+        <p class="variant-meta"></p>
+      </section>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
